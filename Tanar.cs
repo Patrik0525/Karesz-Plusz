@@ -18,7 +18,6 @@ namespace Karesz
         void TANÁR_ROBOTJAI()
         {
             new Robot("Karesz", 1000, 1000, 1000, 1000, 0, 5, 28, 0);
-
         }
     }
 }

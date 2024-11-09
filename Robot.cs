@@ -142,6 +142,10 @@ namespace Karesz
 					if (!robot.Kész)
 						robot.Start_or_Resume();
 			}
+			/// <summary>
+			/// Elindítja, megállítja, folytatja vagy lépteti a robotok kódját.
+			/// </summary>
+			/// <param name="akció"></param>
 			public static void Játék(int akció)
 			{
 				Thread játék = new Thread(delegate ()
@@ -269,6 +273,9 @@ namespace Karesz
 							Robot.halállista.Add(Robot.lista[j]);
 						}
 			}
+			/// <summary>
+			/// Elindítja vagy folytatja a robotok kódját.
+			/// </summary>
 			void Start_or_Resume()
 			{
 				if (this.thread.ThreadState == ThreadState.Unstarted)

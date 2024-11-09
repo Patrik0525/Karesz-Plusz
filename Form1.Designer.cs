@@ -24,6 +24,7 @@ namespace Karesz
         void InitializeComponent()
         {
             this.monitorpanel2 = new System.Windows.Forms.Panel();
+            this.helpgomb = new System.Windows.Forms.Button();
             this.stepgomb = new System.Windows.Forms.Button();
             this.pausegomb = new System.Windows.Forms.Button();
             this.várakozásidő_updown = new System.Windows.Forms.NumericUpDown();
@@ -75,6 +76,7 @@ namespace Karesz
             // 
             this.monitorpanel2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.monitorpanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monitorpanel2.Controls.Add(this.helpgomb);
             this.monitorpanel2.Controls.Add(this.stepgomb);
             this.monitorpanel2.Controls.Add(this.pausegomb);
             this.monitorpanel2.Controls.Add(this.várakozásidő_updown);
@@ -88,25 +90,35 @@ namespace Karesz
             this.monitorpanel2.Controls.Add(this.várakozási_időbox);
             this.monitorpanel2.Controls.Add(this.robotbox);
             this.monitorpanel2.Controls.Add(this.pályabox);
-            this.monitorpanel2.Location = new System.Drawing.Point(1004, 35);
+            this.monitorpanel2.Location = new System.Drawing.Point(997, 35);
             this.monitorpanel2.Name = "monitorpanel2";
             this.monitorpanel2.Size = new System.Drawing.Size(159, 743);
             this.monitorpanel2.TabIndex = 2;
             // 
+            // helpgomb
+            // 
+            this.helpgomb.Location = new System.Drawing.Point(6, 713);
+            this.helpgomb.Name = "helpgomb";
+            this.helpgomb.Size = new System.Drawing.Size(145, 23);
+            this.helpgomb.TabIndex = 47;
+            this.helpgomb.Text = "Felület használása (help)";
+            this.helpgomb.UseVisualStyleBackColor = true;
+            this.helpgomb.Click += new System.EventHandler(this.helpgomb_Click);
+            // 
             // stepgomb
             // 
             this.stepgomb.Image = global::Karesz.Properties.Resources.step;
-            this.stepgomb.Location = new System.Drawing.Point(79, 52);
+            this.stepgomb.Location = new System.Drawing.Point(79, 56);
             this.stepgomb.Name = "stepgomb";
             this.stepgomb.Size = new System.Drawing.Size(69, 43);
             this.stepgomb.TabIndex = 42;
             this.stepgomb.UseVisualStyleBackColor = true;
-            this.stepgomb.Click += new System.EventHandler(this.button1_Click);
+            this.stepgomb.Click += new System.EventHandler(this.stepgomb_Click);
             // 
             // pausegomb
             // 
             this.pausegomb.Image = global::Karesz.Properties.Resources.pause;
-            this.pausegomb.Location = new System.Drawing.Point(9, 52);
+            this.pausegomb.Location = new System.Drawing.Point(9, 56);
             this.pausegomb.Name = "pausegomb";
             this.pausegomb.Size = new System.Drawing.Size(67, 43);
             this.pausegomb.TabIndex = 40;
@@ -117,7 +129,7 @@ namespace Karesz
             // 
             this.várakozásidő_updown.BackColor = System.Drawing.SystemColors.Window;
             this.várakozásidő_updown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.várakozásidő_updown.Location = new System.Drawing.Point(17, 144);
+            this.várakozásidő_updown.Location = new System.Drawing.Point(17, 148);
             this.várakozásidő_updown.Name = "várakozásidő_updown";
             this.várakozásidő_updown.Size = new System.Drawing.Size(126, 20);
             this.várakozásidő_updown.TabIndex = 39;
@@ -131,7 +143,7 @@ namespace Karesz
             // várakozásidő_slider
             // 
             this.várakozásidő_slider.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.várakozásidő_slider.Location = new System.Drawing.Point(9, 119);
+            this.várakozásidő_slider.Location = new System.Drawing.Point(9, 123);
             this.várakozásidő_slider.Maximum = 100;
             this.várakozásidő_slider.Name = "várakozásidő_slider";
             this.várakozásidő_slider.Size = new System.Drawing.Size(139, 45);
@@ -141,7 +153,7 @@ namespace Karesz
             // 
             // pályagomb
             // 
-            this.pályagomb.Location = new System.Drawing.Point(79, 705);
+            this.pályagomb.Location = new System.Drawing.Point(79, 676);
             this.pályagomb.Name = "pályagomb";
             this.pályagomb.Size = new System.Drawing.Size(69, 26);
             this.pályagomb.TabIndex = 32;
@@ -152,7 +164,7 @@ namespace Karesz
             // pályatextbox
             // 
             this.pályatextbox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.pályatextbox.Location = new System.Drawing.Point(11, 681);
+            this.pályatextbox.Location = new System.Drawing.Point(11, 652);
             this.pályatextbox.Name = "pályatextbox";
             this.pályatextbox.Size = new System.Drawing.Size(136, 20);
             this.pályatextbox.TabIndex = 31;
@@ -164,7 +176,7 @@ namespace Karesz
             // 
             this.robotnévlabel.AutoSize = true;
             this.robotnévlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.robotnévlabel.Location = new System.Drawing.Point(40, 195);
+            this.robotnévlabel.Location = new System.Drawing.Point(40, 199);
             this.robotnévlabel.Name = "robotnévlabel";
             this.robotnévlabel.Size = new System.Drawing.Size(75, 20);
             this.robotnévlabel.TabIndex = 3;
@@ -174,7 +186,7 @@ namespace Karesz
             // következőrobotgomb
             // 
             this.következőrobotgomb.Image = global::Karesz.Properties.Resources.forward;
-            this.következőrobotgomb.Location = new System.Drawing.Point(83, 217);
+            this.következőrobotgomb.Location = new System.Drawing.Point(83, 221);
             this.következőrobotgomb.Name = "következőrobotgomb";
             this.következőrobotgomb.Size = new System.Drawing.Size(65, 43);
             this.következőrobotgomb.TabIndex = 2;
@@ -183,8 +195,9 @@ namespace Karesz
             // 
             // elozorobotgomb
             // 
+            this.elozorobotgomb.AccessibleName = "";
             this.elozorobotgomb.Image = global::Karesz.Properties.Resources.back;
-            this.elozorobotgomb.Location = new System.Drawing.Point(10, 217);
+            this.elozorobotgomb.Location = new System.Drawing.Point(10, 221);
             this.elozorobotgomb.Name = "elozorobotgomb";
             this.elozorobotgomb.Size = new System.Drawing.Size(66, 43);
             this.elozorobotgomb.TabIndex = 1;
@@ -196,7 +209,7 @@ namespace Karesz
             this.startgomb2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startgomb2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.startgomb2.Image = global::Karesz.Properties.Resources.play;
-            this.startgomb2.Location = new System.Drawing.Point(9, 3);
+            this.startgomb2.Location = new System.Drawing.Point(9, 7);
             this.startgomb2.Name = "startgomb2";
             this.startgomb2.Size = new System.Drawing.Size(140, 43);
             this.startgomb2.TabIndex = 0;
@@ -206,7 +219,7 @@ namespace Karesz
             // várakozási_időbox
             // 
             this.várakozási_időbox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.várakozási_időbox.Location = new System.Drawing.Point(6, 98);
+            this.várakozási_időbox.Location = new System.Drawing.Point(6, 102);
             this.várakozási_időbox.Name = "várakozási_időbox";
             this.várakozási_időbox.Size = new System.Drawing.Size(145, 79);
             this.várakozási_időbox.TabIndex = 44;
@@ -218,7 +231,7 @@ namespace Karesz
             this.robotbox.Controls.Add(this.karesznagyításkeret);
             this.robotbox.Controls.Add(this.mivanalattamnagyításkeret);
             this.robotbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.robotbox.Location = new System.Drawing.Point(6, 181);
+            this.robotbox.Location = new System.Drawing.Point(6, 185);
             this.robotbox.Name = "robotbox";
             this.robotbox.Size = new System.Drawing.Size(145, 160);
             this.robotbox.TabIndex = 45;
@@ -247,7 +260,7 @@ namespace Karesz
             // 
             // pályabox
             // 
-            this.pályabox.Location = new System.Drawing.Point(6, 663);
+            this.pályabox.Location = new System.Drawing.Point(6, 634);
             this.pályabox.Name = "pályabox";
             this.pályabox.Size = new System.Drawing.Size(145, 75);
             this.pályabox.TabIndex = 46;
@@ -468,7 +481,7 @@ namespace Karesz
             this.monitorpanel1.Controls.Add(this.piroslabel);
             this.monitorpanel1.Controls.Add(this.zöldlabel);
             this.monitorpanel1.Controls.Add(this.pirostextbox);
-            this.monitorpanel1.Location = new System.Drawing.Point(12, 3);
+            this.monitorpanel1.Location = new System.Drawing.Point(5, 3);
             this.monitorpanel1.Name = "monitorpanel1";
             this.monitorpanel1.Size = new System.Drawing.Size(1151, 26);
             this.monitorpanel1.TabIndex = 1;
@@ -477,7 +490,7 @@ namespace Karesz
             // 
             this.képkeret.BackColor = System.Drawing.Color.LightGray;
             this.képkeret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.képkeret.Location = new System.Drawing.Point(12, 35);
+            this.képkeret.Location = new System.Drawing.Point(5, 35);
             this.képkeret.Name = "képkeret";
             this.képkeret.Size = new System.Drawing.Size(984, 744);
             this.képkeret.TabIndex = 0;
@@ -487,14 +500,14 @@ namespace Karesz
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1177, 787);
+            this.ClientSize = new System.Drawing.Size(1160, 783);
             this.Controls.Add(this.monitorpanel1);
             this.Controls.Add(this.monitorpanel2);
             this.Controls.Add(this.képkeret);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Karesz++";
+            this.Text = "Karesz+";
             this.monitorpanel2.ResumeLayout(false);
             this.monitorpanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.várakozásidő_updown)).EndInit();
@@ -565,5 +578,6 @@ namespace Karesz
         private GroupBox várakozási_időbox;
         private GroupBox robotbox;
         private GroupBox pályabox;
+        private Button helpgomb;
     }
 }

@@ -257,13 +257,18 @@ namespace Karesz
 				pausegomb.Image = Resources.pause;
 			}
         }
-        void button1_Click(object sender, EventArgs e)
+        void stepgomb_Click(object sender, EventArgs e)
         {
 			if (Robot.játék_megy == false && Robot.játék_elindult)
 			{
 				Robot.Játék(step);
 			}
         }
+        void helpgomb_Click(object sender, EventArgs e)
+        {
+			MessageBox.Show("Play gomb : beindítja a kódot\nPause gomb : megállítja/folytatja a kódot\nStep gomb : egyesével lépteti a kódot\nVárakozási idő : beállítja, hogy mennyit várjon a kód az utasítások közt (kevesebb = gyorsabb)\nRobot : a két gombbal tudsz váltogatni a robotok közt\nPálya : betölt egy pályát egy .txt fájlból");
+        }
+
         #endregion
     }
 }
