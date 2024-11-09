@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace Karesz
 {
@@ -174,14 +175,21 @@ namespace Karesz
                         switch (akció)
                         {
                             case start:
-                                játék.Start();
-                                játék_megy = true;
-								játék_elindult = true;
+								if (játék.IsAlive == false)
+								{
+									játék.Start();
+									játék_megy = true;
+									játék_elindult = true;
+								}
                                 break;
                             case pause:
                                 játék_megy = false;
                                 foreach (Robot robot in Robot.lista)
-                                    robot.thread.Suspend();
+								{
+                                    if (robot.thread.IsAlive == true)
+									robot.thread.Suspend();
+                                }
+                                    
                                 break;
                             case resume:
                                 játék_megy = true;
@@ -281,6 +289,7 @@ namespace Karesz
 				if (this.thread.ThreadState == ThreadState.Unstarted)
 					this.thread.Start();
 				else if (this.Vár && játék_megy == true || steppel == true)
+					if (this.thread.ThreadState == ThreadState.Suspended) // tudom, hogy hülyén néz ki ez az if statement nestelés, de ez valamiért csak így működik
 					this.thread.Resume();
 			}
 			#endregion
