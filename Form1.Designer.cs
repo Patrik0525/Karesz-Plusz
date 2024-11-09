@@ -504,6 +504,7 @@ namespace Karesz
             this.Controls.Add(this.monitorpanel1);
             this.Controls.Add(this.monitorpanel2);
             this.Controls.Add(this.képkeret);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
