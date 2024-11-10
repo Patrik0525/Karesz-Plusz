@@ -169,13 +169,13 @@ namespace Karesz
 				});
 				foreach (Robot robotok in Robot.lista)
 				{
-					if (robotok.Kész == true)
+					if (robotok.Kész)
 						játék_megy = false;
 					else
                         switch (akció)
                         {
                             case start:
-								if (játék.IsAlive == false)
+								if (!játék.IsAlive)
 								{
 									játék.Start();
 									játék_megy = true;
@@ -288,7 +288,7 @@ namespace Karesz
 			{
 				if (this.thread.ThreadState == ThreadState.Unstarted)
 					this.thread.Start();
-				else if (this.Vár && játék_megy == true || steppel == true)
+				else if (this.Vár && játék_megy || steppel)
 					if (this.thread.ThreadState == ThreadState.Suspended) // tudom, hogy hülyén néz ki ez az if statement nestelés, de ez valamiért csak így működik
 					this.thread.Resume();
 			}
@@ -455,9 +455,9 @@ namespace Karesz
 			public Bitmap Iránykép() => képkészlet[v.ToInt()];
 			void Cselekvés_vége()
 			{
-				if (!Kész && Elindult && steppel == false)
+				if (!Kész && Elindult && !steppel)
 					this.thread.Suspend();
-				else if (!Kész && Elindult && steppel == true)
+				else if (!Kész && Elindult && steppel)
 					Robot.Játék(pause);
 			}
 			#endregion

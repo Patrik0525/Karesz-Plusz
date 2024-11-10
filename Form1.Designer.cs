@@ -40,6 +40,7 @@ namespace Karesz
             this.karesznagyításkeret = new System.Windows.Forms.PictureBox();
             this.mivanalattamnagyításkeret = new System.Windows.Forms.PictureBox();
             this.pályabox = new System.Windows.Forms.GroupBox();
+            this.resetgomb = new System.Windows.Forms.Button();
             this.mivanitttextbox = new System.Windows.Forms.TextBox();
             this.mivanalattamlabel = new System.Windows.Forms.Label();
             this.pozícióYtextbox = new System.Windows.Forms.TextBox();
@@ -68,6 +69,7 @@ namespace Karesz
             this.robotbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.karesznagyításkeret)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mivanalattamnagyításkeret)).BeginInit();
+            this.pályabox.SuspendLayout();
             this.monitorpanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.képkeret)).BeginInit();
             this.SuspendLayout();
@@ -153,9 +155,9 @@ namespace Karesz
             // 
             // pályagomb
             // 
-            this.pályagomb.Location = new System.Drawing.Point(79, 676);
+            this.pályagomb.Location = new System.Drawing.Point(80, 676);
             this.pályagomb.Name = "pályagomb";
-            this.pályagomb.Size = new System.Drawing.Size(69, 26);
+            this.pályagomb.Size = new System.Drawing.Size(68, 26);
             this.pályagomb.TabIndex = 32;
             this.pályagomb.Text = "betölt";
             this.pályagomb.UseVisualStyleBackColor = true;
@@ -176,7 +178,7 @@ namespace Karesz
             // 
             this.robotnévlabel.AutoSize = true;
             this.robotnévlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.robotnévlabel.Location = new System.Drawing.Point(40, 199);
+            this.robotnévlabel.Location = new System.Drawing.Point(41, 199);
             this.robotnévlabel.Name = "robotnévlabel";
             this.robotnévlabel.Size = new System.Drawing.Size(75, 20);
             this.robotnévlabel.TabIndex = 3;
@@ -260,12 +262,23 @@ namespace Karesz
             // 
             // pályabox
             // 
+            this.pályabox.Controls.Add(this.resetgomb);
             this.pályabox.Location = new System.Drawing.Point(6, 634);
             this.pályabox.Name = "pályabox";
             this.pályabox.Size = new System.Drawing.Size(145, 75);
             this.pályabox.TabIndex = 46;
             this.pályabox.TabStop = false;
             this.pályabox.Text = "pálya";
+            // 
+            // resetgomb
+            // 
+            this.resetgomb.Location = new System.Drawing.Point(4, 42);
+            this.resetgomb.Name = "resetgomb";
+            this.resetgomb.Size = new System.Drawing.Size(69, 26);
+            this.resetgomb.TabIndex = 48;
+            this.resetgomb.Text = "reset";
+            this.resetgomb.UseVisualStyleBackColor = true;
+            this.resetgomb.Click += new System.EventHandler(this.resetgomb_Click);
             // 
             // mivanitttextbox
             // 
@@ -490,6 +503,7 @@ namespace Karesz
             // 
             this.képkeret.BackColor = System.Drawing.Color.LightGray;
             this.képkeret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.képkeret.Cursor = System.Windows.Forms.Cursors.Cross;
             this.képkeret.Location = new System.Drawing.Point(5, 35);
             this.képkeret.Name = "képkeret";
             this.képkeret.Size = new System.Drawing.Size(984, 744);
@@ -508,6 +522,7 @@ namespace Karesz
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Karesz+";
             this.monitorpanel2.ResumeLayout(false);
             this.monitorpanel2.PerformLayout();
@@ -516,6 +531,7 @@ namespace Karesz
             this.robotbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.karesznagyításkeret)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mivanalattamnagyításkeret)).EndInit();
+            this.pályabox.ResumeLayout(false);
             this.monitorpanel1.ResumeLayout(false);
             this.monitorpanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.képkeret)).EndInit();
@@ -580,5 +596,6 @@ namespace Karesz
         private GroupBox robotbox;
         private GroupBox pályabox;
         private Button helpgomb;
+        private Button resetgomb;
     }
 }

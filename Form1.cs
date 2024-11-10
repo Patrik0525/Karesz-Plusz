@@ -29,13 +29,8 @@ namespace Karesz
 				}
 				Fordulj(balra);
 				Lépj();
-				
-
-
 			};
 		}
-
-
     }
 }
 

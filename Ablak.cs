@@ -40,6 +40,7 @@ namespace Karesz
 		const int pause = 1;
 		const int resume = 2;
 		const int step = 3;
+		const int reset = 4;
 
 		#endregion
 
@@ -79,7 +80,7 @@ namespace Karesz
 
 		void Saját_InitializeComponent()
 		{
-			this.Icon = Resources.Karesz;
+			this.Icon = Resources.KareszHD;
 			textboxok = new TextBox[]
 			{
 				pozícióXtextbox,
@@ -259,16 +260,19 @@ namespace Karesz
         }
         void stepgomb_Click(object sender, EventArgs e)
         {
-			if (Robot.játék_megy == false && Robot.játék_elindult)
+			if (!Robot.játék_megy && Robot.játék_elindult)
 			{
 				Robot.Játék(step);
 			}
         }
         void helpgomb_Click(object sender, EventArgs e)
         {
-			MessageBox.Show("Play gomb : beindítja a kódot\nPause gomb : megállítja/folytatja a kódot\nStep gomb : egyesével lépteti a kódot\nVárakozási idő : beállítja, hogy mennyit várjon a kód az utasítások közt (kevesebb = gyorsabb)\nRobot : a két gombbal tudsz váltogatni a robotok közt\nPálya : betölt egy pályát egy .txt fájlból");
+			MessageBox.Show("Play gomb : beindítja a kódot\nPause gomb : megállítja/folytatja a kódot\nStep gomb : egyesével lépteti a kódot\nVárakozási idő : beállítja, hogy mennyit várjon a kód az utasítások közt (kevesebb = gyorsabb)\nRobot : a két gombbal tudsz váltogatni a robotok közt\nPálya : betölt egy pályát egy .txt fájlból vagy újratölti a pályát + karesz kódját");
         }
-
+		void resetgomb_Click(object sender, EventArgs e)
+        {
+			Application.Restart();
+        }
         #endregion
     }
 }

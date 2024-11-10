@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\KareszHD.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -120,6 +123,7 @@
     <None Include="Resources\Lilesz3.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\KareszHD.ico" />
     <None Include="Resources\Karesz.ico" />
     <None Include="Resources\resume.png" />
     <None Include="Resources\forward.png" />
