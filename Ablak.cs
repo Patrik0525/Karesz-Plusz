@@ -27,8 +27,14 @@ namespace Karesz
 		const int jobbra = 1;
 		const int balra = -1;
 
-		//színek				
-		const int fekete = 2;
+		//nézés
+		const int fel = 0;
+		const int bal = 3;
+		const int le = 2;
+		const int jobb = 1;
+
+        //színek				
+        const int fekete = 2;
 		const int piros = 3;
 		const int zöld = 4;
 		const int sárga = 5;

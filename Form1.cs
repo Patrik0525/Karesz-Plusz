@@ -23,11 +23,10 @@ namespace Karesz
 			{
 				// IDE ÍRD AZ UTASÍTÁSOKAT!
 
-				while (!Van_e_előttem_fal())
-				{
-					Lépj();
-				}
-				Fordulj(balra);
+				Sétálj();
+				Várj(2);
+				Mondd(Convert.ToString(Pozíció()));
+				Nézz(bal);
 				Lépj();
 			};
 		}
@@ -42,7 +41,8 @@ namespace Karesz
 
 MOZGÁSOK
 
-Lépj();                          -------- Karesz előre lép egyet.
+Lépj(n);                         -------- Karesz előre lép n-szer.
+Sétálj();						 -------- Karesz lép előre addig, ameddig falhoz vagy a pálya széléhez nem ér.
 Fordulj(jobbra);                 -------- Karesz jobbra fordul.
 Fordulj(balra);                  -------- Karesz balra fordul.
 Vegyél_fel_egy_kavicsot();       -------- Karesz felvesz egy kavicsot.
