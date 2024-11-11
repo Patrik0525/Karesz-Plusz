@@ -23,10 +23,10 @@ namespace Karesz
 			{
 				// IDE ÍRD AZ UTASÍTÁSOKAT!
 
-				Sétálj();
-				Várj(2);
-				Mondd(Convert.ToString(Pozíció()));
-				Nézz(bal);
+				ZSétálj();
+				ZVárj(2);
+				ZMondd(Convert.ToString(ZPozíció()));
+				ZNézz(bal);
 				Lépj();
 			};
 		}

@@ -9,15 +9,17 @@ namespace Karesz
 	{
 		#region Robotokra visszavezetett parancsok
 
-		void Várj(int n = 1)
+		void ZVárj(int n = 1)
 			{for (int i = 0; i < n; i++) Robot.akit_kiválasztottak.Várj();}
-        void Lépj(int n = 1) => 
+        void ZLépj(int n = 1) => 
 			Robot.akit_kiválasztottak.Lépj(n);
-		void Sétálj() =>
+		void Lépj() =>
+			Robot.akit_kiválasztottak.Lépj(1);
+		void ZSétálj() =>
 			Robot.akit_kiválasztottak.Sétálj();
 		void Fordulj(int irány) => 
 			Robot.akit_kiválasztottak.Fordulj(irány);
-		void Nézz(int dir) =>
+		void ZNézz(int dir) =>
 			Robot.akit_kiválasztottak.Nézz(dir);
 		int Köveinek_száma_ebből(int szín) => 
 			Robot.akit_kiválasztottak.Köveinek_száma_ebből(szín);
@@ -25,9 +27,9 @@ namespace Karesz
 			Robot.akit_kiválasztottak.Vegyél_fel_egy_kavicsot();
 		void Tegyél_le_egy_kavicsot(int szín = fekete) => 
 			Robot.akit_kiválasztottak.Tegyél_le_egy_kavicsot(szín);
-		void Mondd(string ezt) =>
+		void ZMondd(string ezt) =>
 			Robot.akit_kiválasztottak.Mondd(ezt);
-		void Lőjj() =>
+		void ZLőjj() =>
 			Robot.akit_kiválasztottak.Lőjj();
 		bool Van_e_itt_Kavics() => 
 			Robot.akit_kiválasztottak.Alatt_van_kavics();
@@ -43,7 +45,7 @@ namespace Karesz
 			Robot.akit_kiválasztottak.SzélesUltrahangSzenzor();
 		int Hőmérséklet() => 
 			Robot.akit_kiválasztottak.Hőmérő();
-		(int, int) Pozíció() =>
+		(int, int) ZPozíció() =>
 			Robot.akit_kiválasztottak.Hol_vagyok();
 
         #endregion
