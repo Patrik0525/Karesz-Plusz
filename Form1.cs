@@ -22,12 +22,6 @@ namespace Karesz
 			Robot.Get("Karesz").Feladat = delegate ()
 			{
 				// IDE ÍRD AZ UTASÍTÁSOKAT!
-
-				ZSétálj();
-				ZVárj(2);
-				ZMondd(Convert.ToString(ZPozíció()));
-				ZNézz(bal);
-				Lépj();
 			};
 		}
     }
