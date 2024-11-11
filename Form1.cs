@@ -41,13 +41,17 @@ namespace Karesz
 
 MOZGÁSOK
 
-Lépj(n);                         -------- Karesz előre lép n-szer.
-Sétálj();						 -------- Karesz lép előre addig, ameddig falhoz vagy a pálya széléhez nem ér.
+Lépj();                          -------- Karesz előre lép egyszer.
+ZLépj(n);                        -------- Karesz előre lép n-szer.
+ZSétálj();					   	 -------- Karesz lép előre addig, ameddig falhoz vagy a pálya széléhez nem ér.
 Fordulj(jobbra);                 -------- Karesz jobbra fordul.
 Fordulj(balra);                  -------- Karesz balra fordul.
+ZNézz(fel/le/balra/jobbra)       -------- Karesz néz egy megadott irányba.
 Vegyél_fel_egy_kavicsot();       -------- Karesz felvesz egy kavicsot.
 Tegyél_le_egy_kavicsot();        -------- Karesz letesz egy fekete kavicsot
 Tegyél_le_egy_kavicsot(piros);   -------- Karesz letesz egy piros kavicsot.
+ZMondd(ezt);					 -------- Karesz kimondja azt, amit megadsz a zárójelekben.
+ZLőjj();						 -------- Karesz lő egy hógolyót, ha tud.
 
 Minden mozgás után a robot köre véget ér és a következő robot jön. 
 
@@ -61,6 +65,7 @@ Mi_van_alattam();           -------- a kavics színe, amin Karesz áll. (Ez igaz
 Ultrahang();                -------- a Karesz előtt található tárgy távolsága. Ez a tárgy lehet fal vagy másik robot is. 
 SzélesUltrahang();          -------- ugyanaz, mint az ultrahangszenzor, de ez nem csak a Karesz előtti mezőket pásztázza, hanem a szomszédos mezőket is. Egy számhármast ad vissza. 
 Hőmérséklet();              -------- a Karesz által mért hőmérséklet. A láva forrása 1000 fok, amitől lépésenként távolodva a hőmérséklet 200 fokonként hűl. Az alapértelmezett hőmérséklet 0 fok.
+ZPozíció();					-------- Visszaadja Karesz X és Y pozícióját egy listában (X,Y).
 
 A szenzorokat bármennyiszer használhatja a robot a saját körén belül.
 */
