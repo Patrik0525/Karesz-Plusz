@@ -14,6 +14,7 @@ namespace Karesz
     public partial class Form1 : Form
     {
         string betöltendő_pálya = "palya01.txt";
+        static bool legacy_mode = true;
 
         void TANÁR_ROBOTJAI()
         {
