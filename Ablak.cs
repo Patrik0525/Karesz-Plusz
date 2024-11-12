@@ -87,6 +87,8 @@ namespace Karesz
 		void Saját_InitializeComponent()
 		{
 			this.Icon = Resources.KareszHD;
+			legacycheck.Checked = legacy_mode;
+			legacycheck.Enabled = false;
 			textboxok = new TextBox[]
 			{
 				pozícióXtextbox,
