@@ -39,7 +39,9 @@ namespace Karesz
 			Robot.akit_kiválasztottak.Előtt_fal_van();
 		bool Kilépek_e_a_pályáról() =>
 			Robot.akit_kiválasztottak.Ki_fog_lépni_a_pályáról();
-		int Ultrahang() =>
+		bool ZVan_e_előttem_kavics(int type = fekete) =>
+			Robot.akit_kiválasztottak.MiVanElőttem() == type;
+        int Ultrahang() =>
 			Robot.akit_kiválasztottak.UltrahangSzenzor();
 		(int, int, int) SzélesUltrahang() =>
 			Robot.akit_kiválasztottak.SzélesUltrahangSzenzor();

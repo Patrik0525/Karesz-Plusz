@@ -13,15 +13,34 @@ namespace Karesz
 {
 	public partial class Form1 : Form
 	{
-
-		// IDE JÖNNEK AZ ELJÁRÁSOK ÉS FÜGGVÉNYEK
+		bool done = false;
+		void FollowPath()
+		{
+			if (Van_e_itt_Kavics())
+			{
+				Vegyél_fel_egy_kavicsot();
+			}
+			for (int i = 0; i < 4; i++)
+			{
+				if (ZVan_e_előttem_kavics())
+				{
+					Lépj();
+					return;
+				}
+				Fordulj(balra);
+			}
+            done = true;
+        }
 
 
 		void DIÁK_ROBOTJAI()
 		{
 			Robot.Get("Karesz").Feladat = delegate ()
 			{
-				// IDE ÍRD AZ UTASÍTÁSOKAT!
+				while (!done)
+				{
+					FollowPath();
+                }
 			};
 		}
     }
@@ -77,6 +96,7 @@ ZVárj(ennyit);					 -------- Karesz vár ennyi iterációt.
 Érzékelés:
 
 ZPozíció();					     -------- Visszaadja Karesz X és Y pozícióját egy listában (X,Y).
+ZVan_e_előttem_kavics(x)		 -------- Igaz ha Karez előtt van x típusú kavics.
 
 A szenzorokat bármennyiszer használhatja a robot a saját körén belül.
 */

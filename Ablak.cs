@@ -28,10 +28,10 @@ namespace Karesz
 		const int balra = -1;
 
 		//nézés
-		const int fel = 0;
-		const int bal = 3;
-		const int le = 2;
-		const int jobb = 1;
+		const int zfel = 0;
+		const int zbal = 3;
+		const int zle = 2;
+		const int zjobb = 1;
 
         //színek				
         const int fekete = 2;
