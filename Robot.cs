@@ -307,10 +307,20 @@ namespace Karesz
 			/// <summary>
 			/// Lépteti a robotot a megfelelő irányba.
 			/// </summary>
-			public void Lépj()
+			public void Lépj(int n = 1)
 			{
-				helyigény = h+v;
-				Cselekvés_vége();
+				for (int i  = 0; i < n; i++)
+				{
+                    helyigény = h + v;
+                    Cselekvés_vége();
+                }
+			}
+			public void Sétálj()
+			{
+				while (!(MiVanElőttem() == fal) && !Ki_fog_lépni_a_pályáról())
+				{
+					Lépj();
+				}
 			}
 			/// <summary>
 			/// Elforgatja a robotot a megadott irányban. (Csak normális irányokra reagál.)
@@ -321,6 +331,28 @@ namespace Karesz
 				v.Forgat(forgásirány);
 				Cselekvés_vége();
 			}
+			public void Nézz(int f)
+			{
+                switch (f)
+                {
+                    case 0:
+                        (v.X, v.Y) = (0, -1);
+                        break;
+                    case 1:
+                        (v.X, v.Y) = (1, 0);
+                        break;
+                    case 2:
+                        (v.X, v.Y) = (0, 1);
+                        break;
+                    case 3:
+                        (v.X, v.Y) = (-1, 0);
+                        break;
+                    default:
+                        (v.X, v.Y) = (0, 0);
+                        break;
+                }
+				Cselekvés_vége();
+            }
 			/// <summary>
 			/// Lerakja az adott színű követ a pályán a robot helyére.
 			/// </summary>
@@ -421,6 +453,8 @@ namespace Karesz
 			/// </summary>
 			/// <returns></returns>
 			public bool Ki_fog_lépni_a_pályáról() => this.MiVanElőttem() == nincs_pálya;
+
+			public (int, int) Hol_vagyok() => (Convert.ToInt32(form.pozícióXtextbox.Text), Convert.ToInt32(form.pozícióYtextbox.Text));
 
 			/// <summary>
 			/// megadja, hogy milyen messze van a robot előtti legközelebbi olyan objektum, amely vissza tudja verni a hangot (per pill. másik robot vagy fal)

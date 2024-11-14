@@ -10,5 +10,5 @@ real
 
 Credit :
 - Karesz eredeti készítőinek
-- [@itsZforZach](https://www.github.com/itsZforZach)-nek az új pályabetöltésért
+- [@itsZforZach](https://www.github.com/itsZforZach)-nek az új pályabetöltésért, illetve a szent Z-funkciókért
 - [@LuunaEclipse](https://www.github.com/LuunaEclipse)-nek a nagy felbontású Karesz ikonért és a Karesz+ logóért

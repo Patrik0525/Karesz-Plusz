@@ -27,8 +27,14 @@ namespace Karesz
 		const int jobbra = 1;
 		const int balra = -1;
 
-		//színek				
-		const int fekete = 2;
+		//nézés
+		const int zfel = 0;
+		const int zbal = 3;
+		const int zle = 2;
+		const int zjobb = 1;
+
+        //színek				
+        const int fekete = 2;
 		const int piros = 3;
 		const int zöld = 4;
 		const int sárga = 5;
@@ -81,6 +87,8 @@ namespace Karesz
 		void Saját_InitializeComponent()
 		{
 			this.Icon = Resources.KareszHD;
+			legacycheck.Checked = legacy_mode;
+			legacycheck.Enabled = false;
 			textboxok = new TextBox[]
 			{
 				pozícióXtextbox,

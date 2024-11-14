@@ -13,22 +13,34 @@ namespace Karesz
 {
 	public partial class Form1 : Form
 	{
-
-		// IDE JÖNNEK AZ ELJÁRÁSOK ÉS FÜGGVÉNYEK
+		bool done = false;
+		void FollowPath()
+		{
+			if (Van_e_itt_Kavics())
+			{
+				Vegyél_fel_egy_kavicsot();
+			}
+			for (int i = 0; i < 4; i++)
+			{
+				if (ZVan_e_előttem_kavics())
+				{
+					Lépj();
+					return;
+				}
+				Fordulj(balra);
+			}
+            done = true;
+        }
 
 
 		void DIÁK_ROBOTJAI()
 		{
 			Robot.Get("Karesz").Feladat = delegate ()
 			{
-				// IDE ÍRD AZ UTASÍTÁSOKAT!
-
-				while (!Van_e_előttem_fal())
+				while (!done)
 				{
-					Lépj();
-				}
-				Fordulj(balra);
-				Lépj();
+					FollowPath();
+                }
 			};
 		}
     }
@@ -42,7 +54,7 @@ namespace Karesz
 
 MOZGÁSOK
 
-Lépj();                          -------- Karesz előre lép egyet.
+Lépj();                          -------- Karesz előre lép egyszer.
 Fordulj(jobbra);                 -------- Karesz jobbra fordul.
 Fordulj(balra);                  -------- Karesz balra fordul.
 Vegyél_fel_egy_kavicsot();       -------- Karesz felvesz egy kavicsot.
@@ -61,6 +73,30 @@ Mi_van_alattam();           -------- a kavics színe, amin Karesz áll. (Ez igaz
 Ultrahang();                -------- a Karesz előtt található tárgy távolsága. Ez a tárgy lehet fal vagy másik robot is. 
 SzélesUltrahang();          -------- ugyanaz, mint az ultrahangszenzor, de ez nem csak a Karesz előtti mezőket pásztázza, hanem a szomszédos mezőket is. Egy számhármast ad vissza. 
 Hőmérséklet();              -------- a Karesz által mért hőmérséklet. A láva forrása 1000 fok, amitől lépésenként távolodva a hőmérséklet 200 fokonként hűl. Az alapértelmezett hőmérséklet 0 fok.
+
+#####################################################
+													#
+00000		00000	0   0	0   0	 0000	 0000	#
+   0		0		0   0	00  0	0		0		#
+  0			000		0   0	0 0 0	0		00000	#
+ 0			0		0   0	0  00	0		    0	#
+00000		0		 000	0   0	 0000	0000	#
+													#
+#####################################################
+
+Mozgás:
+
+ZNézz(fel/le/balra/jobbra)       -------- Karesz néz egy megadott irányba.
+ZLépj(n);                        -------- Karesz előre lép n-szer.
+ZSétálj();					   	 -------- Karesz lép előre addig, ameddig falhoz vagy a pálya széléhez nem ér.
+ZMondd(ezt);					 -------- Karesz kimondja azt, amit megadsz a zárójelekben.
+ZLőjj();						 -------- Karesz lő egy hógolyót, ha tud.
+ZVárj(ennyit);					 -------- Karesz vár ennyi iterációt.
+
+Érzékelés:
+
+ZPozíció();					     -------- Visszaadja Karesz X és Y pozícióját egy listában (X,Y).
+ZVan_e_előttem_kavics(x)		 -------- Igaz ha Karez előtt van x típusú kavics.
 
 A szenzorokat bármennyiszer használhatja a robot a saját körén belül.
 */

@@ -63,6 +63,7 @@ namespace Karesz
             this.pozíciólabel = new System.Windows.Forms.Label();
             this.monitorpanel1 = new System.Windows.Forms.Panel();
             this.képkeret = new System.Windows.Forms.PictureBox();
+            this.legacycheck = new System.Windows.Forms.CheckBox();
             this.monitorpanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.várakozásidő_updown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.várakozásidő_slider)).BeginInit();
@@ -155,7 +156,7 @@ namespace Karesz
             // 
             // pályagomb
             // 
-            this.pályagomb.Location = new System.Drawing.Point(80, 676);
+            this.pályagomb.Location = new System.Drawing.Point(80, 654);
             this.pályagomb.Name = "pályagomb";
             this.pályagomb.Size = new System.Drawing.Size(68, 26);
             this.pályagomb.TabIndex = 32;
@@ -166,7 +167,7 @@ namespace Karesz
             // pályatextbox
             // 
             this.pályatextbox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.pályatextbox.Location = new System.Drawing.Point(11, 652);
+            this.pályatextbox.Location = new System.Drawing.Point(11, 629);
             this.pályatextbox.Name = "pályatextbox";
             this.pályatextbox.Size = new System.Drawing.Size(136, 20);
             this.pályatextbox.TabIndex = 31;
@@ -262,10 +263,11 @@ namespace Karesz
             // 
             // pályabox
             // 
+            this.pályabox.Controls.Add(this.legacycheck);
             this.pályabox.Controls.Add(this.resetgomb);
-            this.pályabox.Location = new System.Drawing.Point(6, 634);
+            this.pályabox.Location = new System.Drawing.Point(6, 612);
             this.pályabox.Name = "pályabox";
-            this.pályabox.Size = new System.Drawing.Size(145, 75);
+            this.pályabox.Size = new System.Drawing.Size(145, 97);
             this.pályabox.TabIndex = 46;
             this.pályabox.TabStop = false;
             this.pályabox.Text = "pálya";
@@ -512,6 +514,16 @@ namespace Karesz
             this.képkeret.Paint += new System.Windows.Forms.PaintEventHandler(this.képkeret_Paint);
             this.képkeret.MouseDown += new System.Windows.Forms.MouseEventHandler(this.képkeret_MouseDown);
             // 
+            // legacycheck
+            // 
+            this.legacycheck.AutoSize = true;
+            this.legacycheck.Location = new System.Drawing.Point(58, 73);
+            this.legacycheck.Name = "legacycheck";
+            this.legacycheck.Size = new System.Drawing.Size(84, 17);
+            this.legacycheck.TabIndex = 48;
+            this.legacycheck.Text = "Legacy mód";
+            this.legacycheck.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1160, 783);
@@ -532,6 +544,7 @@ namespace Karesz
             ((System.ComponentModel.ISupportInitialize)(this.karesznagyításkeret)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mivanalattamnagyításkeret)).EndInit();
             this.pályabox.ResumeLayout(false);
+            this.pályabox.PerformLayout();
             this.monitorpanel1.ResumeLayout(false);
             this.monitorpanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.képkeret)).EndInit();
@@ -597,5 +610,6 @@ namespace Karesz
         private GroupBox pályabox;
         private Button helpgomb;
         private Button resetgomb;
+        private CheckBox legacycheck;
     }
 }
